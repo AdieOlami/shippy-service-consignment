@@ -1,3 +1,4 @@
+// shippy-service-consignment/proto/consignment/consignment.proto
 syntax = "proto3";
 
 package consignment;
@@ -31,3 +32,7 @@ message Response {
     // Added a pluralised consignment to our generic response message
     repeated Consignment consignments = 3;
 }
+// protoc -I. --go_out=plugins=micro:. \
+//                 proto/consignment/consignment.proto
+
+//                 protoc --plugin=protoc-gen-go=/Users/Olar/home/golib/bin/protoc-gen-go --plugin=protoc-gen-micro=/Users/Olar/home/golib/bin/protoc-gen-micro --proto_path=/Users/Olar/home/golib/src:. --go_out=. --micro_out=. proto/consignment/consignment.proto
